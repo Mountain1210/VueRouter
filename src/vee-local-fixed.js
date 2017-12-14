@@ -1,4 +1,7 @@
+
+
 export default {
+
   after: (field, [target]) => ` ${field}必须在${target}之后`,
   alpha_dash: (field) => ` ${field}能够包含字母数字字符，包括破折号、下划线`,
   alpha_num: (field) => `${field} 只能包含字母数字字符.`,
@@ -12,7 +15,6 @@ export default {
   decimal: (field, [decimals] = ['*']) => ` ${field} 必须是数字的而且能够包含${decimals === '*' ? '' : decimals} 小数点.`,
   digits: (field, [length]) => ` ${field} 必须是数字，且精确到 ${length}数`,
   dimensions: (field, [width, height]) => ` ${field}必须是 ${width} 像素到 ${height} 像素.`,
-  email: (field) => ` ${field} 必须是有ddd效的邮箱.`,
   email: (field) => ` ${field} 必须是有效的邮箱.`,
   ext: (field) => ` ${field} 必须是有效的文件.`,
   image: (field) => ` ${field} 必须是图片.`,

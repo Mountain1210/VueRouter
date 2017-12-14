@@ -6,7 +6,7 @@ export default {
     name: {type: String},
     labelname: {type: String},
     rules: {type: String},
-    value: {},
+    value: "",
     inputType: {type: String, default: 'text'}
   },
   mounted () {
@@ -18,6 +18,7 @@ export default {
   },
   methods: {
     onValidate (e) {
+      console.log(this.rules)
       if (this.rules) {
         this.validator.validate(this.name, e.target.value)
       }
@@ -25,9 +26,9 @@ export default {
   },
   computed: {
     validator () {
-console.log(1)
+      console.log(1)
+      console.log(this.$parent.$validator)
       if (this.$parent.$validator) {
-
         return this.$parent.$validator
       } else {
 
@@ -44,7 +45,7 @@ console.log(1)
       
     },
     errorBag () {
-      console.log(3)
+      console.log(3) 
       return this.validator.errors; //this.validator.errorBag
     },
     hasError () {
@@ -57,9 +58,10 @@ console.log(1)
     }
   },
   render (h) {
+    // /console.log(this.onValidate)
     return <div class="uk-form-row">
       <label class="uk-form-label"
-             for={this.name}>{this.labelname}</label>
+             for={this.name}>{this.name}</label>
       <div class="uk-form-controls">
         <input id={this.name}
                name={this.name}
@@ -67,10 +69,10 @@ console.log(1)
                v-validate={this.rules}
                on-input={this.onValidate}
                value={this.value}/>
-                 <small class={{
+                 <span class={{
           'uk-text-danger': true,
           'uk-show': this.hasError
-        }}>{ this.errorMsg }</small>
+        }}>{ this.errorMsg }</span>
       </div>
     </div>
   }

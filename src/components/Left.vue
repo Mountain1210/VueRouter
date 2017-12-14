@@ -11,13 +11,15 @@
           <div> 我的书</div>
         </router-link>
         <router-link :to="{ name : 'ValiddateDemo'}" tag="li">
-          <div> ValiddateDemo</div>
+          <div> 验证测试</div>
         </router-link>
 
         <router-link :to="{ name : 'myWeChat'}" tag="li">
-          <div> myWeChat</div>
+          <div> 微信端测试</div>
         </router-link>
-        <li>4</li>
+           <router-link :to="{ name : 'computedTest'}" tag="li">
+          <div> computed测试</div>
+        </router-link>
         <li>5</li>
         <li>6</li>
         <li>7</li>

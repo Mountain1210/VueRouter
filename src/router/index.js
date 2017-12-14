@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Me from '../Me.vue'
 import ValiddateDemo from '../Myvaliddate.vue'
 import myWeChat from '../myWeChat.vue'
+import computedTest from '../computedTest.vue'
 const Home = resolve => require(['../Home.vue'], resolve)
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/myWeChat',
       name: 'myWeChat',
       component: myWeChat
+    }
+    ,{
+      path: '/computedTest',
+      name: 'computedTest',
+      component: computedTest
     }
 
   ]
