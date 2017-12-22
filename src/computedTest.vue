@@ -15,9 +15,17 @@ data(){
     }
   },
   created () {
-  this.$resource('/api/books')
+
       this.bookService = this.$resource('/api/books')
-		console.log(this.bookService);
+		 this.bookService.query({page: 1, size: this.pageSize})
+          .then((res) => {
+            this.books = res.body.data
+            this.totalBooks = res.body.total_records
+			console.log(this.books);
+			console.log(this.totalBooks);
+          }, (error) => {
+            console.log(error)
+          })
     }
   ,computed: {
             comage: function() { //computed下的函数也可以在绑定到html中去
