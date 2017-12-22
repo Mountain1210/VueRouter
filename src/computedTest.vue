@@ -13,7 +13,11 @@ data(){
       name: '',
       age: 18
     }
-  }
+  },
+  created () {
+      this.bookService = this.$resource('/api/books')
+		console.log(this.bookService);
+    }
   ,computed: {
             comage: function() { //computed下的函数也可以在绑定到html中去
                 return parseInt(this.age) +10;
