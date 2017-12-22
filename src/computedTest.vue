@@ -15,6 +15,7 @@ data(){
     }
   },
   created () {
+  this.$resource('/api/books')
       this.bookService = this.$resource('/api/books')
 		console.log(this.bookService);
     }

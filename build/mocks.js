@@ -5,8 +5,7 @@ let mockData = require('../src/fixtures/items.json');
 const _ = require('lodash');
 
 router.get('/books', function (req, res) {
-	
-	console.log(11111111111111111);
+	console.log("books")
   const page = req.query.page || 0,
     size = req.query.size || 10,
     filter = req.query.filter,
@@ -19,7 +18,6 @@ router.get('/books', function (req, res) {
 
   // 对数据进行分页
   const pageData = _.take(_.slice(filteredData, skipStart), size);
-console.log(pageData);
   res.json({
     total_records: filteredData.length,
     total_pages: Math.ceil(filteredData.length / size),
