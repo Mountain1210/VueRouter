@@ -22,7 +22,8 @@ const autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
 const proxyTable = config.dev.proxyTable
-
+var mocks = require('./mocks')
+var bodyParser = require('body-parser')
 const app = express()
 const compiler = webpack(webpackConfig)
 
@@ -67,6 +68,10 @@ app.use(devMiddleware)
 // serve pure static assets
 const staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}));
+app.use('/api', mocks)
 
 const uri = 'http://localhost:' + port
 
