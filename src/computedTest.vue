@@ -57,6 +57,7 @@ data(){
   ,methods:{
     show:function(event){
       const self=this;
+      console.log(this)
       console.log(event.target.innerHTML)
       let spanval=this.$refs.myspan.innerHTML;//获取全部的span
     }

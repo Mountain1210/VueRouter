@@ -4,6 +4,7 @@ import Me from '../Me.vue'
 import ValiddateDemo from '../Myvaliddate.vue'
 import myWeChat from '../myWeChat.vue'
 import computedTest from '../computedTest.vue'
+import formTest from '../formTest.vue'
 const Home = resolve => require(['../Home.vue'], resolve)
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/computedTest',
       name: 'computedTest',
       component: computedTest
+    }
+    ,{
+      path: '/formTest',
+      name: 'formTest',
+      component: formTest
     }
 
   ]

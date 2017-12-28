@@ -20,7 +20,9 @@
            <router-link :to="{ name : 'computedTest'}" tag="li">
           <div> computed测试</div>
         </router-link>
-        <li>5</li>
+           <router-link :to="{ name : 'formTest'}" tag="li">
+          <div> form测试</div>
+        </router-link>
         <li>6</li>
         <li>7</li>
         <li>7</li>
