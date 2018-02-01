@@ -21,30 +21,30 @@ export default new Router({
       path: '/me',
       name: 'Me',
       component: Me,
-      children:[
-         {
+      children: [
+        {
           path: '/me/:username',
           name: 'Me',
           component: Me
         }
       ]
-    }
-    ,{
+    },
+    {
       path: '/validdatedemo',
       name: 'ValiddateDemo',
       component: ValiddateDemo
-    }
-    ,{
+    },
+    {
       path: '/myWeChat',
       name: 'myWeChat',
       component: myWeChat
-    }
-    ,{
+    },
+    {
       path: '/computedTest',
       name: 'computedTest',
       component: computedTest
-    }
-    ,{
+    },
+    {
       path: '/formTest',
       name: 'formTest',
       component: formTest

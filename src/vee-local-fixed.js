@@ -1,5 +1,4 @@
 
-
 export default {
 
   after: (field, [target]) => ` ${field}必须在${target}之后`,

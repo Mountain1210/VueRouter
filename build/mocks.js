@@ -28,8 +28,9 @@ router.get('/books', function (req, res) {
 
 })
   .post('/books', function (req, res) {
+	  console.log(req.body);
     mockData.push(req.body)
-	console.log(mockData);
+
     res.json(req.body)
   })
   .put('/books/:isbn', function (req, res) {

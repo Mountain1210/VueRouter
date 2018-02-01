@@ -5,16 +5,9 @@ import VueResource from 'vue-resource'
 import App from './App'
 import router from './router'
 
-
-
 Vue.use(VueResource)
 
-
-
-
-
-
-/*验证信息结束*/
+/* 验证信息结束 */
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
